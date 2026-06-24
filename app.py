@@ -72,6 +72,7 @@ def _build_cmd(query: str, flat: bool = False, client: str = None) -> list:
         sys.executable, "-m", "yt_dlp",
         "--user-agent", ua,
         "--impersonate", "chrome",  # Bypasses datacenter TLS fingerprint blocking
+        "--force-ipv4",             # Railway IPv6 addresses are frequently blocked by YouTube
         "--no-warnings",
         "--socket-timeout", "15",
         "--retries", "3",
